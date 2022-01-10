@@ -20,7 +20,6 @@
 
 	if($.jstree.plugins.state) { return; }
 
-	var to = false;
 	/**
 	 * stores all defaults for the state plugin
 	 * @name $.jstree.defaults.state
@@ -59,6 +58,7 @@
 		preserve_loaded : false
 	};
 	$.jstree.plugins.state = function (options, parent) {
+		var to = false;
 		this.bind = function () {
 			parent.bind.call(this);
 			var bind = function () {
