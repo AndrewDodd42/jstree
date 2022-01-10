@@ -4030,7 +4030,7 @@
 				lft = this.element[0].scrollLeft;
 				if(par.id === $.jstree.root) {
 					if (this._model.data[$.jstree.root].children[0]) {
-						this.get_node(this._model.data[$.jstree.root].children[0], true).children('.jstree-anchor').triger('focus');
+						this.get_node(this._model.data[$.jstree.root].children[0], true).children('.jstree-anchor').trigger('focus');
 					}
 				}
 				else {
@@ -7926,7 +7926,6 @@
  * Saves the state of the tree (selected nodes, opened nodes) on the user's computer using available options (localStorage, cookies, etc)
  */
 
-	var to = false;
 	/**
 	 * stores all defaults for the state plugin
 	 * @name $.jstree.defaults.state
@@ -7965,6 +7964,7 @@
 		preserve_loaded : false
 	};
 	$.jstree.plugins.state = function (options, parent) {
+		var to = false;
 		this.bind = function () {
 			parent.bind.call(this);
 			var bind = function () {
