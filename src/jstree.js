@@ -2817,7 +2817,9 @@
 				}
 				else {
 					d
-						.children(".jstree-children").attr("style","display:block !important").end()
+						.children(".jstree-children").each(function() {
+							this.style.setProperty('display', 'block', 'important');
+						}).end()
 						.removeClass("jstree-open").addClass("jstree-closed")
 							.children('.jstree-anchor').attr("aria-expanded", false).end()
 						.children(".jstree-children").stop(true, true).slideUp(animation, function () {
